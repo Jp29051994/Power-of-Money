@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Power of Money - Paper Trading App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- First Page: Welcome with Start Button -->
+  <div id="welcome-page">
+    <img src="logo.png" alt="Power of Money Logo" class="logo" />
+    <button onclick="navigateTo('login-page')">Start</button>
+  </div>
+
+  <!-- Second Page: Login and Signup -->
+  <div id="login-page" style="display:none;">
+    <h1>Login or Sign Up</h1>
+    <button onclick="navigateTo('home-page')">Login</button>
+    <button onclick="navigateTo('home-page')">Sign Up</button>
+    <button onclick="navigateTo('home-page')">Sign Up with Google</button>
+  </div>
+
+  <!-- Third Page: Home with Live Data -->
+  <div id="home-page" style="display:none;">
+    <h1>Live Indian Share Market Data</h1>
+    <div id="chart">(Chart Display Here)</div>
+    <button onclick="navigateTo('watchlist-page')">Go to Watchlist</button>
+    <button onclick="navigateTo('portfolio-page')">Portfolio</button>
+    <button onclick="navigateTo('wallet-page')">Wallet</button>
+  </div>
+
+  <!-- Fourth Page: Watchlist -->
+  <div id="watchlist-page" style="display:none;">
+    <h1>Your Watchlist</h1>
+    <ul>
+      <li>Nifty 50</li>
+      <li>Bank Nifty</li>
+      <li>Sensex</li>
+      <li>Bitcoin</li>
+    </ul>
+    <button onclick="navigateTo('home-page')">Back to Home</button>
+  </div>
+
+  <!-- Fifth Page: Portfolio -->
+  <div id="portfolio-page" style="display:none;">
+    <h1>Your Portfolio</h1>
+    <p>Track your paper trades and performance here.</p>
+    <button onclick="navigateTo('home-page')">Back to Home</button>
+  </div>
+
+  <!-- Sixth Page: Wallet -->
+  <div id="wallet-page" style="display:none;">
+    <h1>Your Wallet</h1>
+    <p>Balance: ₹5,000,000 (Paper Trading Funds)</p>
+    <p>Subscribe for ₹100 per month to access real-time data.</p>
+    <button onclick="alert('Subscription Successful!')">Subscribe Now</button>
+    <button onclick="navigateTo('home-page')">Back to Home</button>
+  </div>
+
+  <script>
+    function navigateTo(pageId) {
+      document.querySelectorAll('div').forEach(div => div.style.display = 'none');
+      document.getElementById(pageId).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
